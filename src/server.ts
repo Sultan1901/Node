@@ -47,12 +47,15 @@ const swaggerUiOptions = {
   routePrefix: "/",
   exposeRoute: true,
 };
-const SeCKey = "SeCKey";
+const SeCKey = "SecretKey";
 
 server.register(jwt, {
   secret: SeCKey,
 });
-// server.register(fastifyStatic);
+server.register(fastifyStatic, {
+  root: path.join(__dirname, "../uploads"),
+  prefix: "/uploads/",
+});
 
 server.register(fileUpload);
 
