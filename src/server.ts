@@ -47,7 +47,7 @@ const swaggerUiOptions = {
   routePrefix: "/",
   exposeRoute: true,
 };
-const SeCKey = process.env.SeCKey;
+const SeCKey = "SeCKey";
 
 server.register(jwt, {
   secret: SeCKey,

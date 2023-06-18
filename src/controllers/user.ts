@@ -3,7 +3,7 @@ import { prismaClient } from "../prisma";
 import { Users } from "../type-object/user-type";
 import * as bcrypt from "bcrypt";
 
-const SALT = process.env.SALT;
+const SALT = 10;
 
 const sendGrid = require("@sendgrid/mail");
 sendGrid.setApiKey(
