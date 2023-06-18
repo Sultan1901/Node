@@ -23,7 +23,7 @@
     "nodemailer": "^6.9.3"
   },
   "scripts": {
-    "dev": "npx prisma generate && nodemon -r dotenv/config src/index.ts | pino-colada",
+    "dev": "nodemon -r dotenv/config src/index.ts | pino-colada",
     "build": "rm -rf dist && tsc",
     "start": "node dist/index.js",
     "postinstall": "npx prisma generate"
