@@ -7,6 +7,7 @@ import path from "path";
 import busboy from "busboy";
 import stream from "stream";
 import util from "util";
+import { title } from "process";
 
 export const addPost = async (req, res) => {
   const posts = req.body as Post;
@@ -24,8 +25,6 @@ export const addPost = async (req, res) => {
   let file = files.undefined;
 
   let fileName = [];
-  console.log(fileName);
-  
   if (file.name) {
     fileName.push(Date.now() + file.name);
     fs.writeFile(`./uploads/${Date.now()}${file.name}`, file.data, () => {});
@@ -42,8 +41,8 @@ export const addPost = async (req, res) => {
 
   const post = await prismaClient.post.create({
     data: {
-      title: "",
-      description: "",
+      title: req.body.title,
+      description: req.body.description,
       authorId,
       file: fileName,
     },

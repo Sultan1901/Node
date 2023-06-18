@@ -25,8 +25,7 @@
   "scripts": {
     "dev": "nodemon -r dotenv/config src/index.ts | pino-colada",
     "build": "rm -rf dist && tsc",
-    "start": "node dist/index.js",
-    "postinstall": "npx prisma generate"
+    "start": "node dist/index.js"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
