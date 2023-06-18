@@ -24,6 +24,8 @@ export const addPost = async (req, res) => {
   let file = files.undefined;
 
   let fileName = [];
+  console.log(fileName);
+  
   if (file.name) {
     fileName.push(Date.now() + file.name);
     fs.writeFile(`./uploads/${Date.now()}${file.name}`, file.data, () => {});

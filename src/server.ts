@@ -58,7 +58,6 @@ server.register(fastifyStatic, {
 });
 
 server.register(fileUpload);
-// server.register(fastifyPost)
 
 server.register(fastifySensible);
 server.register(fastifySwaggerUi, swaggerUiOptions);
