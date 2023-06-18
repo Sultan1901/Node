@@ -52,10 +52,7 @@ const SeCKey = "SeCKey";
 server.register(jwt, {
   secret: SeCKey,
 });
-server.register(fastifyStatic, {
-  root: path.join(__dirname, "../uploads"),
-  prefix: "/uploads/",
-});
+server.register(fastifyStatic);
 
 server.register(fileUpload);
 
