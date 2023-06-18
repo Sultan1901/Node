@@ -52,7 +52,7 @@ const SeCKey = "SeCKey";
 server.register(jwt, {
   secret: SeCKey,
 });
-server.register(fastifyStatic);
+// server.register(fastifyStatic);
 
 server.register(fileUpload);
 
