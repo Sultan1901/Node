@@ -8,6 +8,8 @@
 //     } else odd.push(i);
 //   }
 
+const { stringify } = require("querystring");
+
 //   let oddSum = odd.reduce((a, b) => a + b)
 //   let evenSum = even.reduce((a, b) => a + b);
 //   console.log(oddSum);
@@ -35,12 +37,35 @@
 //   return s * 1000 + m * 60000 + h * 3600000;
 // }
 // console.log(past(1, 1, 1));
-function sumArray(array) {
-  return array
-    ? array
-        .sort((x, s) => x - s)
-        .slice(1, -1)
-        .reduce((a, b) => a + b, 0)
-    : 0;
+// function sumArray(array) {
+//   return array
+//     ? array
+//         .sort((x, s) => x - s)
+//         .slice(1, -1)
+//         .reduce((a, b) => a + b, 0)
+//     : 0;
+// }
+// console.log(sumArray([1, 3]));
+function incrementString(strng) {
+  let nan = [];
+  let res = [];
+  strng.split("").map((x) => {
+    if (!isNaN(x) && x) {
+      res.push(Number(x));
+    } else nan.push(x);
+  });
+
+  if (res.length) {
+    if (res.reduce((a, b) => a + b, 0) == 0) {
+      res.pop();
+      nan.push(res.join(""));
+
+     
+    }
+    nan.push(res.reduce((a, b) => a + b, 0) + 1);
+  }
+  return nan.join("");
+
+  // return nan.join("");
 }
-console.log(sumArray([1, 3]));
+console.log(incrementString("foobar"));
