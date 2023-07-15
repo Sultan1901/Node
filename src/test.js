@@ -47,25 +47,10 @@ const { stringify } = require("querystring");
 // }
 // console.log(sumArray([1, 3]));
 function incrementString(strng) {
-  let nan = [];
-  let res = [];
-  strng.split("").map((x) => {
-    if (!isNaN(x) && x) {
-      res.push(Number(x));
-    } else nan.push(x);
-  });
-
-  if (res.length) {
-    if (res.reduce((a, b) => a + b, 0) == 0) {
-      res.pop();
-      nan.push(res.join(""));
-
-     
-    }
-    nan.push(res.reduce((a, b) => a + b, 0) + 1);
-  }
-  return nan.join("");
-
-  // return nan.join("");
+  const body = strng.slice(0, -1);
+  const lastDigit = strng.slice(-1).match(/[0-9]/)
+ return lastDigit == null ? strng + "1":lastDigit!=9
+ ?body +(+lastDigit+1)
+ :incrementString(body)+"0"
 }
-console.log(incrementString("foobar"));
+console.log(incrementString("foobar999"));
