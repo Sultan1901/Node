@@ -46,13 +46,17 @@ const { stringify } = require("querystring");
 //     : 0;
 // }
 // console.log(sumArray([1, 3]));
-function incrementString(strng) {
-  const body = strng.slice(0, -1);
-  const lastDigit = strng.slice(-1).match(/[0-9]/);
-  return lastDigit == null
-    // ? strng + "1"
-    // : lastDigit != 9
-    // ? body + (+lastDigit + 1)
-    // : incrementString(body) + "0";
-}
-console.log(incrementString("foobar999"));
+// function incrementString(strng) {
+//   const body = strng.slice(0, -1);
+//   const lastDigit = strng.slice(-1).match(/[0-9]/);
+//   return lastDigit == null
+//     ? strng + "1"
+//     : lastDigit != 9
+//     ? body + (+lastDigit + 1)
+//     : incrementString(body) + "0";
+// }
+// console.log(incrementString("foobar999"));
+const stringToNumber = function (str) {
+  return Number(str);
+};
+console.log(stringToNumber("123"));
