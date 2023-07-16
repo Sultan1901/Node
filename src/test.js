@@ -56,7 +56,11 @@ const { stringify } = require("querystring");
 //     : incrementString(body) + "0";
 // }
 // console.log(incrementString("foobar999"));
-const stringToNumber = function (str) {
-  return Number(str);
-};
-console.log(stringToNumber("123"));
+// const stringToNumber = function (str) {
+//   return Number(str);
+// };
+// console.log(stringToNumber("123"));
+function shortcut(string) {
+  return string.replace(/[ioaeu]/g, "");
+}
+console.log(shortcut("string"));
