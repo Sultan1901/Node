@@ -60,7 +60,20 @@ const { stringify } = require("querystring");
 //   return Number(str);
 // };
 // console.log(stringToNumber("123"));
-function shortcut(string) {
-  return string.replace(/[ioaeu]/g, "");
+// function shortcut(string) {
+//   return string.replace(/[ioaeu]/g, "");
+// }
+// console.log(shortcut("string"));
+
+function longest(s1, s2) {
+  s1arr = []
+  s = s1.split("").sort();
+  s.map((str)=>{
+
+      s1arr.push(str.indexOf(str))
+
+    
+  })
+  return s1arr ;
 }
-console.log(shortcut("string"));
+console.log(longest("sstring", "sssew"));
